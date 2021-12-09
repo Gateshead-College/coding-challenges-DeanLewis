@@ -59,7 +59,7 @@ public class MainMenu {
         int choice = Integer.parseInt(new Scanner(System.in).nextLine());
         if (choice == 1) {
             displayDetails(emp);
-            menu();
+            adminMenu();
         } else if (choice == 2) {
             displayEmployees();
             adminMenu();
@@ -125,6 +125,7 @@ public class MainMenu {
             System.out.println("Please enter your password to confirm:");
             if(new Scanner(System.in).nextLine().equals(emp.getPassword())){
                 System.out.println("Deleting record now...");
+                emps.remove(e);
             }
             else {
                 System.out.println("Invalid password entered, aborting.");
